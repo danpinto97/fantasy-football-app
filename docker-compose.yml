@@ -1,0 +1,11 @@
+services:
+  league-intel:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SITE_PASSWORD: ${SITE_PASSWORD:-}
+      SESSION_SECRET: ${SESSION_SECRET:-}
+      ESPN_SWID: ${ESPN_SWID:-}
+      ESPN_S2: ${ESPN_S2:-}
+    restart: unless-stopped
